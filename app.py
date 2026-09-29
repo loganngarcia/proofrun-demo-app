@@ -6,7 +6,7 @@ from pydantic import BaseModel
 
 class Customer(BaseModel):
     name: str
-    nickname: Optional[str]  # BUG: required in Pydantic v2; v1 treated it as optional
+    nickname: Optional[str] = None  # BUG: required in Pydantic v2; v1 treated it as optional
 
 
 def import_row(row: dict) -> dict:
